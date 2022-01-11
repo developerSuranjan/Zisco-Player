@@ -23,10 +23,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="324dp"
-        android:text="TextView"
+        android:text=""
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:fadingEdge="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -58,7 +63,7 @@
         app:layout_constraintStart_toEndOf="@+id/previous"
         app:layout_constraintTop_toBottomOf="@+id/seekbar"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_play_circle_filled_24" />
+        app:srcCompat="@drawable/pause" />
 
     <ImageView
         android:id="@+id/previous"
@@ -78,5 +83,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/play"
         app:layout_constraintTop_toTopOf="@+id/play"
-        app:srcCompat="@drawable/ic_baseline_skip_next_24" />
+        app:srcCompat="@drawable/next" />
 </androidx.constraintlayout.widget.ConstraintLayout>
