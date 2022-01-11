@@ -3,8 +3,11 @@ package com.example.ziscoplayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -41,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
                         //using listview
                         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, items);
                         listview.setAdapter(adapter);
+                        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                                Intent intent = new Intent(MainActivity.this, PlaySong.class);  //We will click on the song and play it on PlaySong.xml
+                                String currentSong = listview.getItemAtPosition(position).toString();
+                                intent.putExtra("songList", mySongs);
+                                intent.putExtra("currentSong", currentSong);
+                                intent.putExtra("position",position);
+                                startActivity(intent);
+                            }
+                        });
                     }
 
                     @Override
@@ -73,6 +87,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return arrayList;
     }
-
 
 }

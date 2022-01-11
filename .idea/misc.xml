@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/cwh android dev/Projects/Music Player/app/src/main/res/drawable/bg_seekbar.xml" value="0.2703125" />
+        <entry key="..\:/cwh android dev/Projects/Music Player/app/src/main/res/drawable/gradient.xml" value="0.2703125" />
         <entry key="..\:/cwh android dev/Projects/Music Player/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/cwh android dev/Projects/Music Player/app/src/main/res/layout/activity_play_song.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
