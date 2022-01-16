@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZiscoPlayer">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label = "Home"/>
+        <activity
             android:name=".PlaySong"
             android:exported="false" />
         <activity

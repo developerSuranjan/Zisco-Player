@@ -144,7 +144,9 @@ public class PlaySong extends AppCompatActivity {
                 seekbar.setProgress(0);
                 mediaPlayer.start();
                 songname.setText(songs.get(position).getName());
+
             }
         });
     }
+
 }

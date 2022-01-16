@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -23,14 +22,14 @@ import java.io.File;
 import java.util.ArrayList;
 
 //To use runtime permission we use dexter library
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     ListView listview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_activity);
         listview = findViewById(R.id.listview);
-        Dexter.withContext(MainActivity.this)
+        Dexter.withContext(HomeActivity.this)
                 .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new PermissionListener() {
                     @Override
@@ -42,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
                             items[i] = mySongs.get(i).getName().replace(".mp3",""); //To truncate .mp3 part only keep the name
                         }
                         //using listview
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, items);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_1, items);
                         listview.setAdapter(adapter);
                         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                                Intent intent = new Intent(MainActivity.this, PlaySong.class);  //We will click on the song and play it on PlaySong.xml
+                                Intent intent = new Intent(HomeActivity.this, PlaySong.class);  //We will click on the song and play it on PlaySong.xml
                                 String currentSong = listview.getItemAtPosition(position).toString();
                                 intent.putExtra("songList", mySongs);
                                 intent.putExtra("currentSong", currentSong);
